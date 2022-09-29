@@ -1,0 +1,11 @@
+1. python -m pip install --upgrade pip --user
+
+2. python -m pip install virtualenv --user
+
+3. python -m venv myhome
+
+4. myhome\Scripts\activate
+
+5. pip install django==3.1
+
+6. pip list
