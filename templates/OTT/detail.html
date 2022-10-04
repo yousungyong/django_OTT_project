@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Minus</title>
+
+    <!-- <link href="{% static 'OTT/css/carousel.css' %}" rel="stylesheet"> -->
+
+    <!-- Bootstrap CDN URL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Fontawesome URL -->
+    <script src="https://kit.fontawesome.com/53e4af2e34.js" crossorigin="anonymous"></script>
+    <style>
+      html,body {
+        background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: "Open Sans", sans-serif;
+        color: #333333;
+        width: 100%;
+        height: 100%;
+        margin: 0%;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        display: table;
+        padding-top: 10px;padding-bottom: 10px;
+      }
+      .content {
+        position: relative;
+        display: table-cell;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .image{
+        width: 100%;
+        height: 100%; 
+      }
+      .button{
+        position: absolute;
+        top: 80%;
+        left : 80%; 
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.6rem;
+        font-family:  Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        border-style: solid;
+        border-width:  5px;
+      }
+      .col1{
+        font-family:  'Courier New', Courier, monospace;
+        font-size: 1.1rem;
+        color: #FFFFFF;
+        font-weight: bold;  
+      }
+      .col2{
+        font-family:  Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        color: #B0B3B9;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "index_navbar.html" %}
+    <div style="padding-top: 56px;">
+      <div class="row" style="margin: 0%;">
+        <div class="col-xxl-9">
+          <div class="wrapper">
+            <div class="content"> 
+              <image class="image" src="https://d136if5mjncolh.cloudfront.net/image/{{ object.title_eng }}.jpg"></image>
+              <a href="{{ object.get_absolute_url }}/play">
+                <button type="button" class="btn button btn-light btn-sm"><i class="me-2 fa-solid fa-play"></i>&nbsp;&nbsp;play</button>
+              </a>
+            </div>  
+          </div>
+        </div>
+        <div class="col-xxl-3">
+          <div class="wrapper">
+            <div class="content" style="background-color: #0000003e; padding: 10Px;">
+              <div class="container" style="padding:0;">
+                
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    제목
+                  </div>
+                  <div class="col2">
+                    {{ object.title }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    개봉일
+                  </div>
+                  <div class="col2">
+                    {{ object.ralease_date }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    등급
+                  </div>
+                  <div class="col2">
+                    {{ object.grade }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    국가
+                  </div>
+                  <div class="col2">
+                    {{ object.nation }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    배급
+                  </div>
+                  <div class="col2">
+                    {{ object.distribution }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    상영시간
+                  </div>
+                  <div class="col2">
+                    {{ object.running_time }}분
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    감독
+                  </div>
+                  <div class="col2">
+                    {{ object.director }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    배우
+                  </div>
+                  <div class="col2">
+                    {{ object.actor }}
+                  </div>
+                </div>
+                <div class="row row-cols-auto">
+                  <div class="col1">
+                    정보
+                  </div>
+                  <div class="col2">
+                    {{ object.information }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
